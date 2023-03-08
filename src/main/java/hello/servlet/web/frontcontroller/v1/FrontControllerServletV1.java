@@ -1,6 +1,6 @@
 package hello.servlet.web.frontcontroller.v1;
 
-import hello.servlet.web.frontcontroller.v1.controller.MemberFormContollerV1;
+import hello.servlet.web.frontcontroller.v1.controller.MemberFormControllerV1;
 import hello.servlet.web.frontcontroller.v1.controller.MemberListControllerV1;
 import hello.servlet.web.frontcontroller.v1.controller.MemberSaveControllerV1;
 
@@ -14,12 +14,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @WebServlet(name = "frontContollerServletV1", urlPatterns = "/front-controller/v1/*")
-public class FrontContollerServletV1 extends HttpServlet {
+public class FrontControllerServletV1 extends HttpServlet {
 
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
 
-    public FrontContollerServletV1() {
-        controllerMap.put("/front-controller/v1/members/new-form",new MemberFormContollerV1());
+    public FrontControllerServletV1() {
+        controllerMap.put("/front-controller/v1/members/new-form",new MemberFormControllerV1());
         controllerMap.put("/front-controller/v1/members/save",new MemberSaveControllerV1());
         controllerMap.put("/front-controller/v1/members",new MemberListControllerV1());
     }
